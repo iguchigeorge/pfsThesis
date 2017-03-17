@@ -97,7 +97,7 @@ C = (-1)^{n}
 \end{equation}
 であるので,
 Cパリティの保存より,
-パラポジトロニウムは偶数本,オルソポジトロニウムは奇数本の光子へのみ崩壊する.
+パラポジトロニウムは偶数,オルソポジトロニウムは奇数の光子へのみ崩壊する.
 ポジトロニウムの崩壊率は,
 放出される光子の数が1つ増えるごとに微細構造定数 $\alpha \sim 1/137$ の因子がかかり小さくなるので,
 運動量保存を考えると,
@@ -132,6 +132,7 @@ Cパリティの保存より,
 
 \section{磁場中のポジトロニウム}
 ポジトロニウムに磁場を印加すると,ポジトロニウムの基底状態が混合する.
+混合しできた新たなエネルギー固有状態を$\ket{+}$,$\ket{-}$とする.
 まず磁場を$z$方向にとり,大きさを$B$とすると,
 磁場によるハミルトニアンは
 \begin{equation}
@@ -159,7 +160,7 @@ $g$はLandeの$g$因子,$\mu_{\mathrm{B}}$はボーア磁子である.%\noindent
 = 0
 \end{align}
 となり,$\ket{0,0}$と$\ket{1,0}$の状態が磁場によって混合し,
-新たなエネルギー固有状態$\ket{+}$,$\ket{-}$がつくられる.
+$\ket{+}$,$\ket{-}$がつくられることがわかる.
 ここで以下で用いるパラメータ
 \begin{equation}
 	\nonumber
@@ -179,6 +180,11 @@ $\ket{+}$に占める$\ket{0,0}$の割合は
 \end{equation}
 となる.（図\ref{fig:minusstate}）
 
+図\ref{fig:plusstate},図\ref{fig:minusstate}より,
+磁束密度が大きくなると,
+$\ket{+}$に占める$\ket{0,0}$の割合は大きくなり,
+$\ket{-}$に占める$\ket{0,0}$の割合は小さくなる.
+
 \begin{figure}[H]
 \centering
 \includegraphics[keepaspectratio,scale=0.5]{fig/ybm/plusstate.pdf}
@@ -193,18 +199,29 @@ $\ket{+}$に占める$\ket{0,0}$の割合は
 \label{fig:minusstate}
 \end{figure}
 
-また$\ket{+}$の寿命$\tau_{o}$は
+また$\ket{+}$の寿命$\tau_{+}$は
 \begin{equation}
 	\nonumber
 \frac{4}{\frac{1}{\tau_{p}}x^{2}+\frac{1}{\tau_{o}(4-x^{2})}}
 \end{equation}
 となり,（図\ref{fig:pluslife}）
-$\ket{-}$の寿命$\tau_{p}$は
+$\ket{-}$の寿命$\tau_{-}$は
 \begin{equation}
 	\nonumber
 \frac{4}{\frac{1}{\tau_{p}(4-x^{2})}+\frac{1}{\tau_{o}}x^{2}}
 \end{equation}
 となる.（図\ref{fig:minuslife}）
+
+図\ref{fig:pluslife},図\ref{fig:minuslife}より,
+磁束密度が大きくなると,
+$\ket{+}$の寿命$\tau_{+}$は短くなり,
+$\ket{-}$の寿命$\tau_{-}$は長くなる.
+本研究で用いる電磁石による磁場は 0.1 Tであり,
+このときそれぞれの寿命は$\tau_{+} = 116.9 \si{ns}$,
+$\tau_{-} = 125.0 \si{ps}$となり,
+$\tau_{+}$は短くなるが,
+$\tau_{-}$はほとんど変化しない.
+本実験では磁場中での$\tau_{+}$を測定する.
 
 \begin{figure}[H]
 \centering

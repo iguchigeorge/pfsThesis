@@ -2,8 +2,9 @@
 \label{SCtrig}
 
 
-この章では磁場中におけるPMTの動作確認,
-及び新たに導入したトリガー用のプラスチックシンチレータ（以下SCtrig）の評価について述べる.
+この章ではトリガーテスト,
+つまり新たに導入したトリガー用のプラスチックシンチレータ（以下SCtrig）の評価,
+及び磁場中でPMTを使用するための工夫について述べる.
 
 \section{SCtrigの評価（担当:宮辺）}
 
@@ -11,26 +12,27 @@
 昨年度はトリガーに1.275 MeVの$\gamma$線を使用したが,
 本研究では測定精度の向上のために,
 トリガーに陽電子を検出するSCtrigを使用する.
-SCtrigはサンゴバン社製のBC490,
-
-ポリニトロトルエンでできており,厚さは150 $\si{\mu m}$,
-発光量は9000 pkotons/MeVである.図\ref{fig:SCtrig}
+SCtrigはサンゴバン社製のBC490で,
+ポリニトロトルエンでできており,
+屈折率は 1.58,厚さは150 $\si{\mu m}$,
+発光量は9000 photons/MeVである.（図\ref{fig:SCtrig}）
 
 \begin{figure}[H]
 \centering
 \includegraphics[keepaspectratio,scale=0.3]{fig/ybm/SCtrig.pdf}
-\caption{SCtrig}
+\caption{本研究で使用したSCtrig}
 \label{fig:SCtrig}
 \end{figure}
 
-
-図\ref{fig:coinci1},\ref{fig:coinci2}のように,
+ここからは行ったトリガーテストについて述べる.
+SCtrigの設置は図\ref{fig:coinci1},図\ref{fig:coinci2}のように,
 フィルム状のミラーでSCtrigを挟み,2本のPMTをオプティカルグリスで接着する.
 これは2本のPMTで同時計測することにより,
-暗電流（\ref{fig:oscillo2}）のレートを低減することが目的である.
-またSCtrigの後方にもうひとつプラスチックシンチレータが取り付けられたPMT H6410を置く.
+$1\sim 数個$の光電子の暗電流（図\ref{fig:oscillo2}）のレートを低減することが目的である.
+またSCtrigの後方に20mm $\times$ 20mm $\times$ 90mmの
+直方体のプラスチックシンチレータが取り付けられたPMT H6410を置く.
 これは陽電子がSCtrigを通過していることを確かめることが目的である.
-この結果はオシロスコープで図\ref{fig:oscillo},\ref{fig:oscillo1}のようになった.
+この結果はオシロスコープで図\ref{fig:oscillo},図\ref{fig:oscillo1}のようになった.
 
 \begin{figure}[H]
 \begin{minipage}{0.5\hsize}
@@ -56,32 +58,29 @@ SCtrigはサンゴバン社製のBC490,
 \end{figure}
 
 \begin{figure}[tbp]
-%\begin{minipage}{0.5\hsize}
-
 \centering
 \includegraphics[keepaspectratio,scale=0.3]{fig/ybm/oscillo.pdf}
-	\caption[2本のPMTの同時計測]{2本のPMTの同時計測\newline 上2本はSCtrigに取り付けたPMTの信号,下は後方に置いたPMTの信号}
+\caption[poaskdf]{同時計測した2本のPMTと後方に置いたPMTの信号\newline 上2本はSCtrigに取り付けたPMTの信号,下は後方に置いたPMTの信号}
 \label{fig:oscillo}
 \end{figure}
 \begin{figure}[tbp]
-%\end{minipage}
-%\begin{minipage}{0.5\hsize}
 \centering
 \includegraphics[keepaspectratio,scale=0.3]{fig/ybm/oscillo1.pdf}
 \caption{図\ref{fig:oscillo}のシングルショット}
 \label{fig:oscillo1}
-%\end{minipage}
 \end{figure}
 
 図\ref{fig:oscillo}より陽電子がSCtrigを突き抜けていることが確かめられた.
-また図\ref{fig:oscillo1}の波形を積分し式（\ref{eq:charge}）で電荷に直したヒストグラムは図\ref{fig:charge}のようになった.
+また図\ref{fig:oscillo1}の波形を積分し式（\ref{eq:charge}）で電荷に直した.
+いくつかの自称について電荷を求めたヒストグラムは図\ref{fig:charge}のようになった.
 
 \begin{equation}
-Q = \frac{V}{R}
+Q = \frac{\int Vdt}{R}
 \label{eq:charge}
 \end{equation}
 
-ここで$Q$ [C]は電荷,$V$ [V]はオシロスコープの波形を積分した電圧,$R [\Omega]$は終端抵抗で今は50 $\Omega$である.
+ここで$Q$ [C]は電荷,$V$ [V]はオシロスコープの波形の電圧,
+$R [\Omega]$は終端抵抗で本測定では50 $\Omega$であった.
 
 \begin{figure}[htbp]
 \centering
@@ -92,21 +91,44 @@ Q = \frac{V}{R}
 
 
 図\ref{fig:oscillo2}より暗電流の信号の波形の高さは数十 mVであり,
-図\ref{fig:oscillo1}より陽電子による信号の波形の高さは数十 mV,幅は10 nsecであることがわかる.
+図\ref{fig:oscillo1}より陽電子による信号の波形の高さも同様の数十 mVであることがわかる.
 
 図\ref{fig:oscillo2}の典型的な信号の波形は20 mV程度であり,
 これを1個の光電子による信号とみなす.
-図\ref{fig:coinci1},\ref{fig:coinci2}の治具の効率は,
-SCtrigの屈折率や立体角から3 \%と見積もった.
-PMTの量子効率は25 \%である.
-また$\mathrm{^{22}Na}$から出る陽電子が,SCtrigを通過するときのエネルギー損失は約40 keVであり,
+また$\mathrm{^{22}Na}$から出る陽電子が,
+SCtrigを通過するときのエネルギー損失は約40 keVであり,
 そのエネルギーによって約360 個の光子が放出される.
+SCtrigの屈折率から
+\begin{equation}
+\arcsin(\frac{1}{1.58}) \simeq 39^{\circ}
+\end{equation}
+より,SCtrigで発生した光子が,
+$39^{\circ}$より大きい角度で空気との境界に入射すれば全反射する.
+つまり,SCtrigで発生する光子の進む方向がランダムとして,
+効率は
+\begin{equation}
+\frac{90-39}{90} \simeq 0.57
+\end{equation}
+より 57 \% となる.
+また線源の位置とPMT R2248の光電面までの距離（=30 mm）を考えると,
+\begin{equation}
+\frac{10}{30 \times 2 \times \pi} \simeq 0.053
+\end{equation}
+より効率5.3 \%と概算できる.
+以上を合わせて,
+図\ref{fig:coinci1},図\ref{fig:coinci2}の治具の効率は,
+\begin{equation}
+0.57 \times 0.053 \simeq 0.030
+\end{equation}
+より,約3 \%と見積もれる.
+またPMTの量子効率は25 \%である.
+以上の値を代入した式,
 \begin{equation}
 360 \times 0.03 \times 0.25 \simeq 3
 \label{eq:pe}
 \end{equation}
-より約3個の光子がPMTに入射していることがわかる.
-以上より信号の電荷は
+より,約3個の光子がPMTに入射していることがわかる.
+よって信号の電荷は
 \begin{equation}
 	Q = \frac{\frac{1}{2} \times 20 [\si{mV}] \times 10[\si{ns}]}{50 \Omega} \times 3 = 6 [\si{pC}]
 \label{eq:charge1}
@@ -117,7 +139,8 @@ PMTの量子効率は25 \%である.
 図\ref{fig:charge}を見ると,信号の電荷は10 pC以下がほとんどである.
 陽電子の信号は暗電流と同程度かそれ以下の電圧であるので,
 ディスクリミネータの閾値による事象選別は不可能である.
-以上のことから,トリガーにはディスクリミネータによる閾値を設定せずに,
+以上のことから,
+トリガーには陽電子の信号と暗電流を選別するためのディスクリミネータによる閾値を設定せずに,
 2本のPMTの同時計測信号を使用することとした.
 
 
